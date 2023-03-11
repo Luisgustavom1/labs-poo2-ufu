@@ -21,19 +21,24 @@ public class Main {
 
         try {
             long startTime = System.currentTimeMillis();
-            System.out.println("\nTotal number of lines without thread -> " + ( 
-                withThread 
-                    ? linesCounterWithThread(files, rootDir) 
-                    : linesCounterWithoutThread(files, rootDir)
-                ));
+
+            if (withThread) {
+                System.out.println("\nTotal number of lines with thread -> " + linesCounterWithThread(files, rootDir));
+            } else {
+                System.out.println("\nTotal number of lines without thread -> " + linesCounterWithoutThread(files, rootDir));
+            }
+
             long endTime = System.currentTimeMillis();
+        
             System.out.println("Time to read the files " + (endTime - startTime) + " milliseconds");
         } catch (IOException error) {
             System.out.println(error.getMessage());
         }
     }
 
-    // Média de 96 milisegundos -> 10 arquivos 
+    // Media foi feita com 3 resultados
+    // Média de 96 milisegundos -> 10 arquivos
+    // Média de 273 milisegundos -> 100 arquivos 
     public static int linesCounterWithoutThread(File[] files, Path rootDir) throws IOException {
         int allLinesNumber = 0;
 
@@ -48,7 +53,9 @@ public class Main {
         return allLinesNumber;
     }
 
+    // Media foi feita com 3 resultados
     // Média de 19,33 -> 10 arquivos 
+    // Média de 88,33 -> 100 arquivos 
     public static int linesCounterWithThread(File[] files, Path rootDir) throws IOException {
         ThreadPoolExecutor poolExecutor = (ThreadPoolExecutor) Executors.newFixedThreadPool(files.length);
         ArrayList<LinesCounter> linesCounters = new ArrayList<LinesCounter>();
