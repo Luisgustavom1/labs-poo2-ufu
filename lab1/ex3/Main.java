@@ -39,6 +39,7 @@ public class Main {
     // Media foi feita com 3 resultados
     // Média de 96 milisegundos -> 10 arquivos
     // Média de 273 milisegundos -> 100 arquivos 
+    // Média de 1750,33 milisegundos -> 1000 arquivos
     public static int linesCounterWithoutThread(File[] files, Path rootDir) throws IOException {
         int allLinesNumber = 0;
 
@@ -56,6 +57,7 @@ public class Main {
     // Media foi feita com 3 resultados
     // Média de 19,33 -> 10 arquivos 
     // Média de 88,33 -> 100 arquivos 
+    // Média de 688.67 -> 1000 arquivos
     public static int linesCounterWithThread(File[] files, Path rootDir) throws IOException {
         ThreadPoolExecutor poolExecutor = (ThreadPoolExecutor) Executors.newFixedThreadPool(files.length);
         ArrayList<LinesCounter> linesCounters = new ArrayList<LinesCounter>();
