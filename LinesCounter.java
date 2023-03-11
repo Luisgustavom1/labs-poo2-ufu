@@ -25,8 +25,6 @@ public class LinesCounter implements Runnable {
                 System.out.println(error.getMessage());
             }
         }
-
-        System.out.println(this.getLinesNumber());
     }
 
     public int getLinesNumber() {
