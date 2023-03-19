@@ -7,7 +7,7 @@ public class NumberGuesser {
         Random rand = new Random(); 
         int randomNumber = rand.nextInt(101);
 
-        System.out.println("Vamos começar, chute um núemro");
+        System.out.println("Vamos começar, chute um número:");
         int myGuess = sc.nextInt();
 
         while (myGuess != randomNumber) {            

@@ -1,4 +1,4 @@
-public abstract class Atleta {
+public abstract class Atleta implements Comparable {
     private String nome;
     private String esporte;
     private double peso;
@@ -20,14 +20,11 @@ public abstract class Atleta {
         System.out.println("Você deve aquecer por " + minutos + " minutos!");
     }
 
-    public abstract void jogar();
-
-    public String toString() {
-        return "Nome: " + this.nome + ";\n" +
-            "Peso: " + this.peso + ";\n" + 
-            "Altura: " + this.altura + ";\n" +
-            "Esporte: " + this.esporte + ";\n";
+    public int compareTo(Comparable atleta) {
+        return this.nome.compareTo(atleta.getNome());
     }
+
+    public abstract void jogar();
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -59,5 +56,12 @@ public abstract class Atleta {
 
     public double getAltura() {
         return this.altura;
+    }
+
+    public String toString() {
+        return "Nome: " + this.nome + ";\n" +
+            "Peso: " + this.peso + ";\n" + 
+            "Altura: " + this.altura + ";\n" +
+            "Esporte: " + this.esporte + ";\n";
     }
 }
