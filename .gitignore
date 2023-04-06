@@ -1,1 +1,4 @@
 lab0
+/bin
+*.class
+*.zip
