@@ -1,4 +1,4 @@
-public class BMWFactory implements CarFactory {
+public class BMWFactory extends CarImpl implements CarFactory {
     public Accessories buildAccessories() {
         return new AccessoriesImpl();
     };

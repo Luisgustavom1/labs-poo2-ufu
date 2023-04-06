@@ -1,3 +1,3 @@
 interface Engine {
-    void build();
+    void put();
 }

@@ -1,3 +1,3 @@
 interface Accessories {
-    void build();
+    void put();
 }
